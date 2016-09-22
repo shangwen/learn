@@ -10,3 +10,11 @@
 "AllocateVCores":-249
 "AllocateContainers":-252
 ```
+
+### **HADOOP**
+
+#### **1.NM出现OOM**
+
+解决patch: DefaultMetricsSystem leaks the source name when a source unregisters [HADOOP-13362](https://issues.apache.org/jira/browse/HADOOP-13362)
+
+分析[NodeManager因为ContainerMetric导致OOM](http://hackershell.cn/?p=993)
