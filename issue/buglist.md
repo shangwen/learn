@@ -3,7 +3,7 @@
 
 #### **1.集群队列资源卡住，无法分配资源**
 
-解决Patch: [YARN-3933](https://issues.apache.org/jira/browse/YARN-3933)
+解决Patch: Race condition when calling AbstractYarnScheduler.completedContainer. [YARN-3933](https://issues.apache.org/jira/browse/YARN-3933)
 
 ```
 "AllocateMB":-541696
