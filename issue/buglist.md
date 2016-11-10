@@ -42,3 +42,31 @@ java.lang.NullPointerException
         at org.apache.hadoop.hdfs.server.datanode.VolumeScanner.run(VolumeScanner.java:619)
 [2016-08-25T11:02:04.070+08:00] [INFO] server.datanode.VolumeScanner.run(VolumeScanner.java 628) [VolumeScannerThread(/data2/dfs)] : VolumeScanner(/data2/dfs, DS-02fa35a3-b4ab-4727-ab69-c7670f9cf80f) exiting.
 ```
+
+### **Linux**
+
+#### **1.bad interpreter: Text file busy**
+
+原因：｀The Linux kernel will generate a bad interpreter: Text file busy error if your Perl script (or any other kind of script) is open for writing when you try to execute it.｀
+```
+NFO Exception from container-launch:
+2016-11-11 02:08:42 INFO org.apache.hadoop.util.Shell$ExitCodeException: /bin/bash: /data7/yarn1/local/usercache/dd_edw/appcache/application_1477649572165_814985/container_1477649572165_814985_01_001323/launch_container.sh: /bin/bash: bad interpreter: Text file busy
+```
+脚本重现
+```
+#!/usr/bin/env python3
+import os
+import stat
+import subprocess
+
+file = open('./your-script', 'w') # specify full path
+try:
+    file.write("#!/usr/bin/perl\nprint 'unreachable';") 
+    file.flush() # make sure the content is sent to OS
+    os.chmod(file.name, 0o555) # make executable
+    subprocess.call(file.name) # run it
+except Exception as e:
+    print(e)
+finally:
+    os.remove(file.name)
+```
