@@ -43,7 +43,7 @@ java.lang.NullPointerException
 [2016-08-25T11:02:04.070+08:00] [INFO] server.datanode.VolumeScanner.run(VolumeScanner.java 628) [VolumeScannerThread(/data2/dfs)] : VolumeScanner(/data2/dfs, DS-02fa35a3-b4ab-4727-ab69-c7670f9cf80f) exiting.
 ```
 
-#### **1.Namenode crashes after Journalnode re-installation in an HA cluster due to missing paxos directory**
+#### **2.Namenode crashes after Journalnode re-installation in an HA cluster due to missing paxos directory**
 
 解决patch:[HDFS-10659](https://issues.apache.org/jira/browse/HDFS-10659)
 ```
