@@ -20,7 +20,11 @@ java.lang.IllegalArgumentException: count cannot be negative: -2147483648
         at com.google.common.base.Preconditions.checkArgument(Preconditions.java:115)
         at com.google.common.collect.Multisets.checkNonnegative(Multisets.java:943)
 ```
+#### **3.AsyncDispatcher may overloaded with RMAppNodeUpdateEvent when Node is connected/disconnected**
 
+解决Yarn上产生的多余事件，导致事件堆积
+
+[YARN-3390](https://issues.apache.org/jira/browse/YARN-3990)
 
 ### **HADOOP**
 
