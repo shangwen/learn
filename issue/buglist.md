@@ -24,6 +24,10 @@ java.lang.IllegalArgumentException: count cannot be negative: -2147483648
 
 解决Yarn上产生的多余事件，导致事件堆积 [YARN-3390](https://issues.apache.org/jira/browse/YARN-3990)
 
+#### **4.FairShareComparator getResourceUsage poor performance**
+
+提升性能[YARN-5969](https://issues.apache.org/jira/browse/YARN-5969)
+
 ### **HADOOP**
 
 #### **1.NM出现OOM**
