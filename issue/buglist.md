@@ -28,6 +28,10 @@ java.lang.IllegalArgumentException: count cannot be negative: -2147483648
 
 提升性能[YARN-5969](https://issues.apache.org/jira/browse/YARN-5969)
 
+### **YARN RM should avoid unnecessary resolving IP when NMs doing heartbeat**
+
+[YARN-4024](https://issues.apache.org/jira/browse/YARN-4024)
+
 ### **HADOOP**
 
 #### **1.NM出现OOM**
