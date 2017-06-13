@@ -32,6 +32,10 @@ java.lang.IllegalArgumentException: count cannot be negative: -2147483648
 
 [YARN-4024](https://issues.apache.org/jira/browse/YARN-4024)
 
+### **6.NodeManager still reports negative running containers**
+
+[YARN-4408](https://issues.apache.org/jira/browse/YARN-4408)
+
 ### **HADOOP**
 
 #### **1.NM出现OOM**
