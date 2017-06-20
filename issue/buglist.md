@@ -39,6 +39,26 @@ java.lang.IllegalArgumentException: count cannot be negative: -2147483648
 ### **7.Resource manager fails with Null pointer exception**
 
 [YARN-4347](https://issues.apache.org/jira/browse/YARN-4347)
+```
+[2017-06-20T12:33:59.315+08:00] [ERROR] server.resourcemanager.ResourceManager.serviceStart(ResourceManager.java:579) [main-EventThread] : Failed to load/recover state
+java.lang.NullPointerException
+    at org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler.addApplicationAttempt(FairScheduler.java:688)
+    at org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler.handle(FairScheduler.java:1383)
+    at org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler.handle(FairScheduler.java:123)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl$AttemptRecoveredTransition.transition(RMAppAttemptImpl.java:1073)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl$AttemptRecoveredTransition.transition(RMAppAttemptImpl.java:1037)
+    at org.apache.hadoop.yarn.state.StateMachineFactory$MultipleInternalArc.doTransition(StateMachineFactory.java:385)
+    at org.apache.hadoop.yarn.state.StateMachineFactory.doTransition(StateMachineFactory.java:302)
+    at org.apache.hadoop.yarn.state.StateMachineFactory.access$300(StateMachineFactory.java:46)
+    at org.apache.hadoop.yarn.state.StateMachineFactory$InternalStateMachine.doTransition(StateMachineFactory.java:448)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl.handle(RMAppAttemptImpl.java:791)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl.handle(RMAppAttemptImpl.java:104)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl.recoverAppAttempts(RMAppImpl.java:836)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl.access$1900(RMAppImpl.java:101)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl$RMAppRecoveredTransition.transition(RMAppImpl.java:851)
+    at org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl$RMAppRecoveredTransition.transition(RMAppImpl.java:841)
+    at org.apache.hadoop.yarn.state.StateMachineFactory$MultipleInternalArc.doTransition(StateMachineFactory.java:385)
+```
 
 ### **HADOOP**
 
