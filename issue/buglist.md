@@ -60,6 +60,12 @@ java.lang.NullPointerException
     at org.apache.hadoop.yarn.state.StateMachineFactory$MultipleInternalArc.doTransition(StateMachineFactory.java:385)
 ```
 
+### **8.Yarn recover functionality causes the cluster running slowly and the cluster usage rate is far below 100**
+
+[YARN-4398](https://issues.apache.org/jira/browse/YARN-4398)
+
+
+
 ### **HADOOP**
 
 #### **1.NM出现OOM**
