@@ -105,6 +105,24 @@ at o
 ```
 采取备份原来的JN的editlog日志，nn日志之后，`namenode -initializeSharedEdits`，把备份的日志覆盖回来即可
 
+#### **3.DFSClient deadlock when close file and failed to renew lease**
+
+[HDFS-9294](https://issues.apache.org/jira/browse/HDFS-9294)
+
+```
+Found one Java-level deadlock:
+=============================
+"Thread-28846":
+  waiting to lock monitor 0x00007fa091b06678 (object 0x00000000c0439eb0, a java.lang.Object),
+  which is held by "eventHandlingThread"
+"eventHandlingThread":
+  waiting to lock monitor 0x00007fa090dab208 (object 0x00000000c037c2e0, a org.apache.hadoop.hdfs.LeaseRenewer),
+  which is held by "LeaseRenewer:recsys@ns10:8020"
+"LeaseRenewer:recsys@ns10:8020":
+  waiting to lock monitor 0x000000000210d8a8 (object 0x00000000d5081c40, a org.apache.hadoop.hdfs.DFSOutputStream),
+  which is held by "eventHandlingThread"
+```
+
 ### **Linux**
 
 #### **1.bad interpreter: Text file busy**
