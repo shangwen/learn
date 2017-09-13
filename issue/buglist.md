@@ -123,6 +123,10 @@ Found one Java-level deadlock:
   which is held by "eventHandlingThread"
 ```
 
+#### **Change "DFSInputStream has been closed already" message to debug log level**
+
+[HDFS-8099](https://issues.apache.org/jira/browse/HDFS-8099)
+
 ### **Linux**
 
 #### **1.bad interpreter: Text file busy**
